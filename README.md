@@ -8,7 +8,7 @@ work inside of a Rush repository.
 To repoduce:
 
 - clone this repository
-- `cd rush-example`
+- `cd rush-vitest-browser`
 - `rush install`
 - `cd libraries/my-controls`
 - `rushx test`
