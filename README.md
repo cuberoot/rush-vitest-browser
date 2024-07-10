@@ -1,40 +1,20 @@
 # Example Rush Monorepo
 
-This template is part of the documentation of the [Rush](https://rushjs.io/) tool.
-It contains documented templates for all the standard Rush configuration files.
-It also includes three barebones projects that illustrate some dependency
-relationships in a Rush repo:
+This is a modified version of the [basic Rush example](https://github.com/microsoft/rush-example).
 
-- **apps/my-app**: The web application
-- **libraries/my-controls**: A control library used by the application
-- **tools/my-toolchain**: A NodeJS build tool used to compile the other projects
+This version demostrates a bug with vitest browser mode. It does not seem to
+work inside of a Rush repository.
 
-(These projects are NOT meant to provide a realistic toolchain.)
+To repoduce:
 
+- clone this repository
+- `cd rush-example`
+- `rush install`
+- `cd libraries/my-controls`
+- `rushx test`
 
-# Building this repo
-
-To build the projects in this repo, try these shell commands:
+The result is that the browser will open and will display an error like:
 
 ```
-npm install -g @microsoft/rush
-rush install
-rush build
+GET http://localhost:5173/__vitest_browser__/orchestrator-x0A1t8rC.js net::ERR_ABORTED 404 (Not Found)
 ```
-
-For more information, see the documentation at:  https://rushjs.io/
-
-
-# Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
-
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
